@@ -1,0 +1,9 @@
+models --> contains the database schema of the project
+controller --> contains functions that tells the routes send something
+routes --> api routes for the application
+utils --> contains helper functions such as password hashing and other stuffs
+config --> contains Database and App configuration
+.env --> Environment variables such as Mondo db connection string and json web token secret key and all 
+
+
+cors package-> allows my frontend which is considered as different domain to communicate with the backend server
