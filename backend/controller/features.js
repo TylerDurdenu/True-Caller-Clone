@@ -73,7 +73,26 @@ async function reportSpam(req, res) {
     }
 }
 
+async function updateName(req, res) {
+    try{
+        const {name, phone} = req.body;
+        if(!phone || !name) {
+            return res.status(401).json("Name and phone number required to update details")
+        }
+        const user = await PhoneNumber.findOne({number:phone})
+        user.names.push(name);
+        user.save();
+        return res.status(201).json("Name updated successfully");
+    }
+    catch(err) {
+        console.log(err.message);
+        return res.status(500).json("Some error occured while updating the name")
+    }
+}
+
+
 module.exports = {
     PhoneNumberLookup,
-    reportSpam
+    reportSpam, 
+    updateName
 };
