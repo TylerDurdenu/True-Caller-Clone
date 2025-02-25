@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 
 const phoneNumberSchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required:true
-    },
+    names:[
+        {
+            type:String,
+            required:true
+        }
+    ],
     number:{
         type:String,
         unique:true,
@@ -18,4 +20,4 @@ const phoneNumberSchema = new mongoose.Schema({
 
 const PhoneNumber = mongoose.model("PhoneNumber", phoneNumberSchema);
 
-module.exports = PhoneNumber
+module.exports = PhoneNumber;
