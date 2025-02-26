@@ -23,7 +23,6 @@ async function handleRegistration(req, res) {
 async function handleLogin(req, res) {
     try {
         const {phone, password} = req.body;
-
         const user = await User.findOne({phone})
         if(!user) {
             return res.status(404).json("No user exists, Register")
