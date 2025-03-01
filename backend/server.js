@@ -1,13 +1,13 @@
 require("dotenv").config()
 const express = require('express');
 const connectToDB = require("./config/db")
-const authRoutes = require("./routes/auth")
 const featureRoutes = require("./routes/features")
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const helmet = require('helmet');
 const app = express()
 const cors = require('cors');
+const authRoutes = require("./routes/auth")
 
 app.use(cors())
 app.use(cookieParser())
