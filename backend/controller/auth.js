@@ -34,12 +34,13 @@ async function handleLogin(req, res) {
         const token = jwt.sign({
             id:user._id
         },process.env.JWT_SECRET,{expiresIn:"1h"});
-        res.cookie("jwt",token,{
-            maxAge:50000,
-            httpOnly:true,
-            secure:false,
-            sameSite:"lax"
-        })
+        console.log(token)
+        res.cookie("jwt", token, {
+            httpOnly: true,
+            secure: false, 
+            sameSite: "lax", 
+        });
+        
         return res.status(201).json("login successfull")
     }
     catch(err) {

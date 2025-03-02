@@ -15,7 +15,6 @@ const Login = ()=> {
             console.log(response)
             alert(response)
         } catch (error) {
-            console.error("Login failed:", error);
             alert(error);
         }
     };

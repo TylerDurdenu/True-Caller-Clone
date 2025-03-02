@@ -1,8 +1,8 @@
 const jsonwebtoken = require('jsonwebtoken');
 function authorise(req, res,next) {
+    console.log(req.cookies)
     try{
         const jwt = req.cookies.jwt;
-        console.log(jwt)
         if(!jwt){
             return res.status(401).json("Login to use this feature")
         }

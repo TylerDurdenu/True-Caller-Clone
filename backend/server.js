@@ -9,7 +9,10 @@ const app = express()
 const cors = require('cors');
 const authRoutes = require("./routes/auth")
 
-app.use(cors())
+app.use(cors({
+    origin:'http://localhost:5174',
+    credentials:true,
+}))
 app.use(cookieParser())
 app.use(express.json())
 app.use(morgan("dev"))

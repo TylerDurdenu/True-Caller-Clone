@@ -8,14 +8,16 @@ const DEFAULT_COUNTRY_CODE = process.env.DEFAULT_COUNTRY_CODE;
 
 async function PhoneNumberLookup(req,res){
     try {
+        console.log("working")
         const phone = req.query.phone;
-        console.log(phone)
         const user = await PhoneNumber.findOne({number:phone});
         if(user) {
             return res.status(200).json(user);
         }
-        const response = await fetch(`${NUMVERIFY_URL}${NUMVERIFY_API_KEY}&number=${phone}&country_code=${DEFAULT_COUNTRY_CODE}&format=1`)
+        console.log(NUMVERIFY_API_KEY)
+        const response = await fetch(`${NUMVERIFY_URL}?access_key=${NUMVERIFY_API_KEY}&number=${phone}&country_code=${DEFAULT_COUNTRY_CODE}&format=1`)
         const data = await response.json();
+        console.log(data)
         if(!data.valid){
 
             return res.status(400).json("Invlaid phone number");
