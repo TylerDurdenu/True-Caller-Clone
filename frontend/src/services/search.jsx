@@ -11,6 +11,7 @@ async function Search(queryParams) {
             throw new Error("Some error occured please try again later");
         }
         const data = await response.json();
+        
         return data;
     }
     

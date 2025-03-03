@@ -14,10 +14,8 @@ async function PhoneNumberLookup(req,res){
         if(user) {
             return res.status(200).json(user);
         }
-        console.log(NUMVERIFY_API_KEY)
         const response = await fetch(`${NUMVERIFY_URL}?access_key=${NUMVERIFY_API_KEY}&number=${phone}&country_code=${DEFAULT_COUNTRY_CODE}&format=1`)
         const data = await response.json();
-        console.log(data)
         if(!data.valid){
 
             return res.status(400).json("Invlaid phone number");
@@ -34,7 +32,6 @@ async function PhoneNumberLookup(req,res){
         return res.status(201).json({
             name:"Not found",
             country:data.country_name,
-            state:data.location,
             carrier:data.carrier
         });
     }
@@ -50,14 +47,26 @@ async function reportSpam(req, res) {
         const jwt = req.cookies.jwt;
         const userId = jsonwebtoken.decode(jwt).id;
         const user = await PhoneNumber.findOne({number:phone});
+        console.log(phone)
         if(!user) {
+            const response = await fetch(`${NUMVERIFY_URL}?access_key=${NUMVERIFY_API_KEY}&number=${phone}&country_code=${DEFAULT_COUNTRY_CODE}&format=1`)
+            const data = await response.json();
+            if(!data.valid) {
+                console.log(data.json())
+                throw new Error("Phone number not valid");
+            }
             await PhoneNumber.create({
                 names:[name],
+                countryCode:data.country_code,
                 number:phone,
-                spamScore:1
+                spamScore:1,
+                countryName:data.country_name,
+                state:data.location,
+                carrier:data.carrier
             });
         }
         else {
+            console.log("this is the error")
             user.names.push(name);
             user.spamScore+=1;
             await user.save();

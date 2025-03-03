@@ -34,7 +34,6 @@ async function handleLogin(req, res) {
         const token = jwt.sign({
             id:user._id
         },process.env.JWT_SECRET,{expiresIn:"1h"});
-        console.log(token)
         res.cookie("jwt", token, {
             httpOnly: true,
             secure: false, 

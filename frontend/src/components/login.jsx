@@ -1,4 +1,4 @@
-import {login} from "../services/authServices"
+import {LoginAuth} from "../services/authServices"
 import {useState} from "react";
 
 const Login = ()=> {
@@ -11,7 +11,7 @@ const Login = ()=> {
     const handleSubmit = async (e) => {
         e.preventDefault(); 
         try{
-            const response = await login(formData);
+            const response = await LoginAuth(formData);
             console.log(response)
             alert(response)
         } catch (error) {

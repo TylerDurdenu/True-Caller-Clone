@@ -1,4 +1,4 @@
-import { signup } from "../services/authServices";
+import { Signup } from "../services/authServices";
 import { useState } from "react";
 
 const Register = () => {
@@ -28,9 +28,8 @@ const Register = () => {
         }
 
         try {
-            const response = await signup(formData);
+            const response = await Signup(formData);
             console.log(response);
-            if(resp)
             alert("Registration successful!"); 
             setError(""); 
         } catch (err) {

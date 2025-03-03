@@ -1,6 +1,6 @@
 const API_URL = import.meta.env.VITE_BACKEND_URL;
 
-async function signup(userData) {
+async function Signup(userData) {
     try {
         const response = await fetch(`${API_URL}/register`,{
             method:"POST",
@@ -14,18 +14,19 @@ async function signup(userData) {
         return data;
     }
     catch(err) {
-        console.log(err.message);
+        console.log("this is from service"+err.message);
         if(err.message ==="Failed to fetch") throw new Error("Internal server errror");
         throw new Error(err.message );
     }
 }
 
-async function login(userData) {
+async function LoginAuth(userData) {
     try {
         const response = await fetch(`${API_URL}/login`,{
             method:"POST",
             headers:{"Content-type":"application/json"},
-            body:JSON.stringify(userData)
+            body:JSON.stringify(userData),
+            credentials:'include'
         })
         const data = await response.json();
         if(!response.ok) {
@@ -39,4 +40,4 @@ async function login(userData) {
         throw err;
     }
 }
-export { login, signup };
+export { LoginAuth, Signup };
