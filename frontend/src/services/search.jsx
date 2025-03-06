@@ -7,11 +7,11 @@ async function Search(queryParams) {
             method:"GET",
             credentials:"include"
         })
-        if(!response.ok) {
-            throw new Error("Some error occured please try again later");
-        }
         const data = await response.json();
-        
+
+        if(!response.ok) {
+            throw new Error(data);
+        }
         return data;
     }
     

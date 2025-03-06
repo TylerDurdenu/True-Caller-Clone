@@ -18,7 +18,7 @@ async function PhoneNumberLookup(req,res){
         const data = await response.json();
         if(!data.valid){
 
-            return res.status(400).json("Invlaid phone number");
+            return res.status(400).json("Invalid phone number");
         }
         await PhoneNumber.create({
             names:[],
@@ -30,7 +30,10 @@ async function PhoneNumberLookup(req,res){
             carrier:data.carrier
         })
         return res.status(201).json({
-            name:"Not found",
+            names:"Not found",
+            state:data.location,
+            spamScore:0,
+            number:phone,
             country:data.country_name,
             carrier:data.carrier
         });
@@ -66,7 +69,7 @@ async function reportSpam(req, res) {
             });
         }
         else {
-            console.log("this is the error")
+            console.log(name)
             user.names.push(name);
             user.spamScore+=1;
             await user.save();
@@ -87,6 +90,7 @@ async function reportSpam(req, res) {
 async function updateName(req, res) {
     try{
         const {name, phone} = req.body;
+        console.log(name+phone)
         if(!phone || !name) {
             return res.status(401).json("Name and phone number required to update details")
         }

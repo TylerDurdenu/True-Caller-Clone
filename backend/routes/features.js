@@ -5,6 +5,6 @@ const router = express.Router()
 
 router.get("/search",authorise,PhoneNumberLookup);
 router.post("/report",authorise,reportSpam);
-router.post("/updateName",authorise, updateName);
+router.patch("/updateName",authorise, updateName);
 
 module.exports = router;

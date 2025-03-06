@@ -18,7 +18,6 @@ function SearchComponent() {
             }).toString()
         try {
             const response = await Search(queryParams);
-            console.log(await response);
             handleServerData(response);
             return;
         }
