@@ -21,10 +21,12 @@ const Login = ()=> {
     
     return (
         <div>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="phone" placeholder="Phone number" onChange={handleChange}></input>
-                <input type="password" name="password" placeholder="Password" onChange={handleChange}></input>
+            <form className="loginForm" onSubmit={handleSubmit}>
+                <h3>Login</h3>
+                <label htmlFor="phone">Phone</label>
+                <input type="text" name="phone" id="phone" placeholder="Enter your Phone number" onChange={handleChange}></input>
+                <label htmlFor="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password" onChange={handleChange}></input>
                 <button type="submit">Login</button>
             </form>
         </div>

@@ -1,10 +1,11 @@
 import Search from "../services/search";
 import { useState } from "react";
-import SearchResults from "./searchResults";
+import { useNavigate } from "react-router-dom";
+
 function SearchComponent() {
     const [phoneNumber,setPhone] = useState('')
     const [data, setData] = useState("");
-
+    const navigate = useNavigate()
     const handleChange = (e) =>{
         setPhone(e.target.value);
     }
@@ -19,6 +20,7 @@ function SearchComponent() {
         try {
             const response = await Search(queryParams);
             handleServerData(response);
+            navigate('/search', { state: { searchData: response } });
             return;
         }
         catch(err) {
@@ -28,14 +30,13 @@ function SearchComponent() {
     }
     
     return(
-        <div>
+        <div className="search-bar">
             <form onSubmit={handleSubmit}>
-            <input type="text" name="phone" placeholder="Enter your phone number" onChange={handleChange} value={phoneNumber}></input>
-            <button type="submit">Search</button>
-        </form>
-            {data && <div>
-                    <SearchResults data= {data}/>
-                </div>}
+                <span class="prefix">+91</span>
+                <input type="text" name="phone" placeholder="Enter your phone number" onChange={handleChange} value={phoneNumber}></input>
+                <button class="search-icon" type="submit">Q</button> 
+            </form>
+            
         </div>
     )
 }

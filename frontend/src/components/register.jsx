@@ -39,36 +39,44 @@ const Register = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h2>Register</h2>
-            {error && <p style={{ color: "red" }}>{error}</p>} 
+        <form className="registerForm" onSubmit={handleSubmit}>
+          {error && <p style={{ color: "red" }}>{error}</p>} 
+          <h3>Sign Up</h3>
+            <label htmlFor="name"> Name </label>
             <input
                 type="text"
                 name="name"
-                placeholder="Name"
+                id="name"
+                placeholder="Enter your Name"
                 value={formData.name}
                 onChange={handleChange}
                 required
             />
+            <label htmlFor="phone">Phone</label>
             <input
                 type="text"
                 name="phone"
-                placeholder="Phone number"
+                id="phone"
+                placeholder="Enter your phone number"
                 value={formData.phone}
                 onChange={handleChange}
                 required
             />
+            <label htmlFor="password">Enter your password</label>
             <input
                 type="password"
                 name="password"
+                id="password"
                 placeholder="Password"
                 value={formData.password}
                 onChange={handleChange}
                 required
             />
+            <label htmlFor="confirm">Confirm Password</label>
             <input
                 type="password"
                 name="confirmPassword"
+                id="confirm"
                 placeholder="Confirm password"
                 value={formData.confirmPassword}
                 onChange={handleChange}
