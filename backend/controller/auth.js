@@ -35,9 +35,10 @@ async function handleLogin(req, res) {
             id:user._id
         },process.env.JWT_SECRET,{expiresIn:"1h"});
         res.cookie("jwt", token, {
-            httpOnly: true,
-            secure: false, 
+            httpOnly: false,
+            secure: true, 
             sameSite: "lax", 
+            path:"/"
         });
         
         return res.status(201).json("login successfull")
@@ -51,9 +52,10 @@ async function handleLogin(req, res) {
 async function handleLogout(req,res) {
     try {
         res.clearCookie("jwt", {
-            httpOnly:true,
-            secure:'false',
-            sameSite:"lax"
+            httpOnly:false,
+            secure:true,
+            sameSite:"lax",
+            path:"/"
         })
         return res.status(201).json("log out successfull")
     }
