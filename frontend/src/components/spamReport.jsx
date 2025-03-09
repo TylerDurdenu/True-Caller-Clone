@@ -36,23 +36,30 @@ function SpamReport(params) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input
+        <h3 className="reportHead">Suggest a better name</h3>
+        <div className="updateName">
+        <input 
           type="text"
           name="name"
+          placeholder="Enter the name"
           value={formData.name}
           onChange={handleChange}
           required
         />
+        </div>
+        <h3 className="reportHead">Tell us why you're reporting this user</h3>
         <textarea
+          className="reportDes"
           name="reasons"
           value={formData.reasons}
           placeholder="enter your reasons"
           onChange={handleChange}
           required
         ></textarea>
-        <button type="submit">Submit Report</button>
+
+        <button className="namingBtn" type="submit">Submit Report</button>
       </form>
-      {result && (<p>{result}</p>)}
+      {result && (<p id="reportRes">{result}</p>)}
     </div>
   );
 }

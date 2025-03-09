@@ -5,12 +5,17 @@ import { useNavigate } from "react-router-dom";
 function SearchComponent() {
     const [phoneNumber,setPhone] = useState('')
     const [data, setData] = useState("");
+
     const navigate = useNavigate()
     const handleChange = (e) =>{
         setPhone(e.target.value);
     }
     const handleServerData = (serverData)=> {
-        setData(serverData)
+        setData(serverData);
+        console.log(serverData)
+        navigate("/search", {
+            state: { searchData: serverData },
+        });
     }
     const handleSubmit= async(e)=> {
         e.preventDefault();
@@ -19,9 +24,12 @@ function SearchComponent() {
             }).toString()
         try {
             const response = await Search(queryParams);
+            if(response === "Token expired" || response ==="Login to use this feature") {
+                alert(response)
+                return
+            }
             handleServerData(response);
-            navigate('/search', { state: { searchData: response } });
-            return;
+            
         }
         catch(err) {
             console.log(err)

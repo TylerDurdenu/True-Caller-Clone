@@ -1,6 +1,9 @@
 import NavBar from "../components/navBar";
 import SearchResults from "../components/searchResults";
 import { useLocation } from "react-router-dom";
+import SearchComponent from "../components/search";
+import "../assets/styles/searchResults.css"
+import tick_icon from "../assets/tick_icon.png"
 
 export default function Search() {
   const location = useLocation();
@@ -8,7 +11,19 @@ export default function Search() {
   return (
     <div>
         <NavBar/>
-      {searchData ? <SearchResults data={searchData}/> : <p>No search results available</p>}
+        <div className="searchAdv">
+          <img id="icon" src={tick_icon} alt="error" />
+          <p id="t_text">Verify any number using Truecaller </p>
+        </div>
+        <div class="searchResults">
+          {searchData ? <SearchResults data={searchData}/> : <p>No search results available</p>}
+
+        </div>
+
+        <div className="temp">
+
+        </div>
     </div>
+
   );
 }

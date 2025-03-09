@@ -30,7 +30,7 @@ async function LoginAuth(userData) {
         })
         const data = await response.json();
         if(!response.ok) {
-            throw new Error(data.error)
+            throw new Error(data)
         }
         return data;
 
@@ -40,4 +40,21 @@ async function LoginAuth(userData) {
         throw err;
     }
 }
-export { LoginAuth, Signup };
+async function Logout() {
+    try {
+        const response = await fetch(`${API_URL}/logout`,{
+            method:"POST",
+            credentials:'include'
+        })
+        const data =await response.json()
+        if(!response.ok) {
+            throw new Error(data)
+        }
+        return data;
+    }
+    catch(err) {
+        return data;
+    }
+}
+
+export { LoginAuth, Signup, Logout};

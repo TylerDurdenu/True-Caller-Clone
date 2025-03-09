@@ -26,6 +26,9 @@ export default function Home() {
         </div>
       </div>
       <Home_Video/>
+      <div style={{height:"100vh"}}>
+
+      </div>
     </div>
   );
 }

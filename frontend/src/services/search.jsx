@@ -8,7 +8,7 @@ async function Search(queryParams) {
             credentials:"include"
         })
         const data = await response.json();
-
+        
         if(!response.ok) {
             throw new Error(data);
         }

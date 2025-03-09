@@ -2,13 +2,39 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Login from "./login";
 import Register from "./register";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { Logout } from "../services/authServices";
 
 function NavBar() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
+  const [navBackground, setNavBackground] = useState("transparent-nav");
 
+  const location = useLocation();
+  const isHomePage = location.pathname == '/';
+  useEffect(() => {
+    if (!isHomePage){
+      setNavBackground("white-nav")
+    }
+      
 
-  const handleAccountChange = (event) => {
+    const handleScroll = () => {
+      const homeImgHeight = document.querySelector(".homeImg")?.offsetHeight || 0;
+      if (window.scrollY > homeImgHeight) {
+        setNavBackground("white-nav");
+      } else {
+        setNavBackground("transparent-nav");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHomePage]);
+
+  
+  
+  const handleAccountChange = async (event) => {
     const selectedValue = event.target.value;
     if (selectedValue === "login") {
       setIsLoginPopupOpen(true);
@@ -16,6 +42,10 @@ function NavBar() {
     } else if (selectedValue === "register") {
       setIsRegisterPopupOpen(true);
       setIsLoginPopupOpen(false)
+    }else if(selectedValue ==="logout") {
+      const response = await Logout()
+      alert(await response);
+      window.location.href="/";
     }
     event.target.value = ""; 
   };
@@ -30,7 +60,7 @@ function NavBar() {
 
   return (
     <div>
-      <nav className="navBar">
+      <nav className={`navBar ${navBackground}`}>
         <ul>
           <li>
             <Link to="/">TrueCaller</Link>
@@ -40,6 +70,7 @@ function NavBar() {
               <option value="">Sign in</option>
               <option value="login">Login</option>
               <option value="register">Sign Up</option>
+              <option value="logout">Logout</option>
             </select>
           </li>
           <a href="">

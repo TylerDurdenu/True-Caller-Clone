@@ -1,7 +1,7 @@
 import { Signup } from "../services/authServices";
 import { useState } from "react";
 
-const Register = () => {
+const Register = ({onClose}) => {
     const [formData, setData] = useState({
         name: "",
         phone: "",
@@ -30,6 +30,7 @@ const Register = () => {
         try {
             const response = await Signup(formData);
             console.log(response);
+            onClose()
             alert("Registration successful!"); 
             setError(""); 
         } catch (err) {

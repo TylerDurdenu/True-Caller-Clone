@@ -48,8 +48,23 @@ async function handleLogin(req, res) {
     }
 }
 
+async function handleLogout(req,res) {
+    try {
+        res.clearCookie("jwt", {
+            httpOnly:true,
+            secure:'false',
+            sameSite:"lax"
+        })
+        return res.status(201).json("log out successfull")
+    }
+    catch(err) {
+        console.log(err.message);
+        return res.status(501).json("some error occured")
+    }
+}
 
 module.exports = {
     handleRegistration,
-    handleLogin
+    handleLogin,
+    handleLogout
 };

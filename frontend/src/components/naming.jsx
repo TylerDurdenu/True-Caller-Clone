@@ -37,12 +37,15 @@ function Naming({phone}) {
     return(
         <div>
             <form onSubmit={handleSubmit}>
-                <h1>Suggest name</h1>
-                <input type="text" name="name" placeholder="Suggest a better name" value={userName} onChange={handleChange} required></input>
-                <button type="submit">Submit</button>
+                <h1 id="nameHead">Suggest name</h1>
+                <div className='updateName'>
+                <input  type="text" name="name" placeholder="Suggest a better name" value={userName} onChange={handleChange} required></input>
+
+                </div>
+                <button className='namingBtn' type="submit">Submit</button>
             </form>
             { result && (
-                <p>{result}</p>
+                <p id="suggestResult">{result}</p>
             )}
         </div>
     );
