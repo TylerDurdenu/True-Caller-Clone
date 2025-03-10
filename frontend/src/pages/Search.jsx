@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom";
 import SearchComponent from "../components/search";
 import "../assets/styles/searchResults.css"
 import tick_icon from "../assets/tick_icon.png"
+import FinalInfo from "../components/finalInfo";
+import Footer from "../components/footer";
 
 export default function Search() {
   const location = useLocation();
@@ -19,11 +21,9 @@ export default function Search() {
           {searchData ? <SearchResults data={searchData}/> : <p>No search results available</p>}
 
         </div>
-
-        <div className="temp">
-
+        <FinalInfo/>
+        <Footer/>
         </div>
-    </div>
 
   );
 }

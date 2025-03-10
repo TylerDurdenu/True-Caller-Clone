@@ -319,7 +319,7 @@
 
 .homeVideo {
     width: 100%;
-    height: 70vh;
+    height: 65vh;
     display: flex;
 }
 
@@ -330,7 +330,6 @@
 .video {
     position: relative;
     width: 100%;
-
     overflow: hidden;
 }
 .video video {
@@ -338,7 +337,7 @@
     top:0;
     left:0;
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -370,4 +369,201 @@
     border:2px solid #096cfe;
     margin-top: 10px;
     font-weight: 600;
+}
+.footer {
+    height: 100vh;
+    background-color: #0b4ab4;
+    font-family: 'Poppins','sans-serif';
+    color:white
+}
+.footerHead {
+    display: flex;
+    padding-top: 50px;
+}
+#footer_company_name {
+    margin-left: 410px;
+    font-size: 25px;
+    margin-top: 125px;
+}
+#link_head_mr {
+    margin-left: 350px;
+    
+}
+.linkHead {
+    margin-left: 70px;
+    margin-top: 20px;
+    font-size: 25px;
+    margin-top: 125px;
+
+}
+.f {
+    border-radius: 25px;
+    width: 200px;
+}
+.fotter_links_redirects p a{
+    text-decoration: none;
+    color: white;
+    margin-left: 55px;
+}
+.fotter_links_redirects p {
+    margin-top: 15px;
+}
+.footer_links_div {
+    display: flex;
+}
+.fotter_links {
+    display: flex;
+    flex-direction: column;
+    padding-left: 160px;
+    padding-top:50px
+}
+.fotter_links button {
+    margin-top: 15px;
+}
+#android {
+    margin-top: 50px;
+}
+.redirect_links {
+    display: flex;
+}
+.spamFight {
+    width: 100%;
+    height: 120vh;
+    background-color: #042d6b;
+    margin: 0;
+    font-family: 'Poppins','sans-serif';
+    padding-top: 40px;
+}
+.spam_fight_head h3{
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+}
+.spam-fight-num {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+.spam-fight-des {
+    color: #649bee;
+}
+.spam-fight-img-and-des {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.spam-fight-icons {
+    height: 100px;
+    width: 120px;
+}
+
+.spam-fight-img-and-des div {
+    margin-left: 150px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#mrR {
+    margin-left: 0px;
+}
+.spamFight-middle {
+    margin-top: 50px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cR {
+    border:1px solid #6ca6fc;
+    width:400px;
+}
+.spam-users {
+    color: #6ca6fc;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 50px 0 50px;
+}
+.spam-fight-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sp {
+    border:1px solid white;
+    width: 200px;
+    margin-top: 50px;
+}
+.testimonial-marquee {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.testimonial-container {
+    height: 110vh;
+}
+.testimonialImg img {
+    height: 600px;
+    width: 50%;
+}
+.testCont {
+    display: flex;
+}
+.testCont div {
+    width: 50%;
+    height: 100%;
+    font-family: 'Poppins','sans-serif';
+    margin-top: 150px;
+    margin-left: 100px;
+}
+.testCont img {
+    width: 50%;
+    height: 650px;
+}
+.Gr {
+    margin-top: 20px;
+    font-size: 50px;
+
+    font-weight: 700;
+}
+.finalInfo {
+    margin-top: 60px;
+    width: 100%;
+    height: 72.5vh;
+    background-color: #f2f2f2;
+    display: flex;
+    font-family: 'Poppins','sans-serif';
+}
+.finalInfo div {
+    width: 50%;
+    height: 100%;
+}
+.finalInfo div img {
+    width: 521px;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+.finalCont {
+    padding: 100px 0px 0px 50px;
+
+}
+.finalCont button {
+    margin-top: 25px;
+    margin-left: 15px;
+}
+.t {
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+.g {
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+.a {
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }

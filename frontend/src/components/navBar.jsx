@@ -15,7 +15,7 @@ function NavBar() {
   const isHomePage = location.pathname == '/';
   useEffect(() => {
     if (!isHomePage){
-      setNavBackground("white-nav")
+      setNavBackground("white-nav bg-black")
     }
       
 
