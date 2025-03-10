@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Home from "./pages/home"
 import Search from './pages/Search';
-import ForAndroid from './pages/forAndroid';
 const router = createBrowserRouter([
     {
         path:"/",
