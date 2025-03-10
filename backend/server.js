@@ -10,7 +10,7 @@ const cors = require('cors');
 const authRoutes = require("./routes/auth")
 
 app.use(cors({
-    origin:'http://localhost:5176',
+    origin:'https://true-caller-clone-zni5.vercel.app/',
     credentials:true,
 }))
 app.use(cookieParser())
