@@ -12,10 +12,7 @@ const router = createBrowserRouter([
         path:"/search",
         element:<Search></Search>
     },
-    {
-        path:"/android",
-        element:<ForAndroid/>
-    }
+    
 ])
 
 
