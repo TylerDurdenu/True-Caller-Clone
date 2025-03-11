@@ -12,7 +12,10 @@ function Testimonial() {
                     <p className="new-text">IMPACT</p>
                     <p className="Gr">Making an Impact through Truecaller <span id="dot">.</span> </p>
                     <p>Truecaller was created to identify who was calling, but today it is being used to fight crimg, help loved ones</p>
+                    <a href="https://www.truecaller.com/impact?utm_source=WebHome&utm_medium=Banner">
                     <button className="downloadBtn">Read more</button>
+
+                    </a>
                 </div>
             </div>
         </div>

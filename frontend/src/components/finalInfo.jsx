@@ -1,5 +1,4 @@
 import FooterTopImg from "../assets/footerTopImg.avif";
-
 function FinalInfo() {
     return (
         <div className="finalInfo">
@@ -10,11 +9,20 @@ function FinalInfo() {
                 <p className="new-text">DOWNLOAD NOW</p>
                 <p className="Gr">Trust your communication with Truecaller</p>
                 <p>Truecaller was created to identify who was calling, but today it is being used to fight crimg, help loved ones</p>
-                <button className="true_caller_btn t">
-                Try Truecaller for Free
-              </button>
-              <button className="google_play_btn g">Google Play</button>
-              <button className="app_store_btn a">App Store</button>
+                
+              <div className="finalInfoBtnContainer">
+                <a style={{textDecoration:"none"}} href="https://play.google.com/store/apps/details?id=com.truecaller&rdid=com.truecaller&referrer=utm_source%3Dweb--header--index">
+                    <button className="true_caller_btn t">
+                        Try Truecaller for Free
+                    </button>
+                </a>
+                <a style={{textDecoration:"none"}} href="https://play.google.com/store/apps/details?id=com.truecaller&rdid=com.truecaller&referrer=utm_source%3Dweb--header--index">
+                    <button className="google_play_btn g">Google Play</button>
+                </a>
+                <a style={{textDecoration:"none"}} href="https://apps.apple.com/us/app/truecaller-number-caller-id/id448142450">
+                    <button className="app_store_btn a">App Store</button>
+                </a>
+              </div>
             </div>
         </div>
     );

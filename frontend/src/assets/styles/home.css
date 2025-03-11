@@ -215,6 +215,7 @@
     border: 0;
     color: white;
     font-family: 'Poppins','sans-serif';
+    cursor: pointer;
 
 }
 .google_play_btn {
@@ -222,12 +223,20 @@
     height: 50px;
     border: 0;
     font-family: 'Poppins','sans-serif';
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .app_store_btn {
     width: 140px;
     height: 50px;
     border: 0;
     font-family: 'Poppins','sans-serif';
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .close-popup {
@@ -369,6 +378,7 @@
     border:2px solid #096cfe;
     margin-top: 10px;
     font-weight: 600;
+    cursor: pointer;
 }
 .footer {
     height: 100vh;
@@ -495,6 +505,7 @@
     border:1px solid white;
     width: 200px;
     margin-top: 50px;
+    cursor: pointer;
 }
 .testimonial-marquee {
     display: flex;
@@ -566,4 +577,30 @@
     background-color: white;
     border-radius: 25px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+.btnIcons {
+    height: 20px;
+    padding-top: 5px;
+    padding-right:5px
+}
+.true_caller_btn  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.true_caller_btn img {
+    height: 25px;
+}
+.homeBtns a {
+    text-decoration: none;
+}
+.homeBtns {
+    display: flex;
+}
+.finalInfoBtnContainer{
+    display: flex;
+    max-height: 20px;
+}
+.finalInfoBtnContainer a {
+    text-decoration: none;
 }

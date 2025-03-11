@@ -52,7 +52,9 @@ function SpamFight() {
                 </div>
             </div>
             <div className="spam-fight-btn">
-                <button className="downloadBtn sp">Download Truecaller</button>
+                <a href="https://play.google.com/store/apps/details?id=com.truecaller&rdid=com.truecaller&referrer=utm_source=web--header--index">
+                    <button className="downloadBtn sp">Download Truecaller</button>
+                </a>
             </div>
 
         </div>
