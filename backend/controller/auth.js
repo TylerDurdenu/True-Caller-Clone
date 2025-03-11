@@ -37,7 +37,7 @@ async function handleLogin(req, res) {
         res.cookie("jwt", token, {
             httpOnly: false,
             secure: true, 
-            sameSite: "lax", 
+            sameSite: "none", 
             path:"/"
         });
         
