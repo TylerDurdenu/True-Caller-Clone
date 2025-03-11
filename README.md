@@ -1,4 +1,4 @@
-# TrueCaller Clone MERN Project
+![image](https://github.com/user-attachments/assets/60cfdbe5-aa3f-4e74-91ea-c46df6521343)# TrueCaller Clone MERN Project
 
 This project is a clone of the TrueCaller application, built using the MERN stack (MongoDB, Express.js, Vite+React, Node.js). It allows users to search for phone numbers and retrieve associated information.
 
@@ -89,22 +89,43 @@ This project is a clone of the TrueCaller application, built using the MERN stac
         ```
         VITE_BACKEND_URL=<your_backend_url>
         ```
+5.  **Change CORS and Cookies(inside server.js and contoller/auth.js):**
 
-5.  **Run the backend:**
+    * update the app.use(cors({origin....})) as below.
+    * Add the following variables:
+
+        ```
+        app.use(cors({
+              origin:"http://localhost:5173/",
+              credential:true
+         })
+        ```
+    * Replace the res.cookies in controller/auth.js with the following code.
+        ```
+        res.cookie("token", token, {
+        httpOnly: true,       // Prevents client-side access
+        secure: false, 
+        sameSite: "lax",      
+        expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), 
+      });
+
+        ```
+
+6.  **Run the backend:**
 
     ```bash
     cd ../backend
     nodemon server.js
     ```
 
-6.  **Run the frontend:**
+7.  **Run the frontend:**
 
     ```bash
     cd ../frontend
     npm run dev
     ```
 
-7.  **Access the application:**
+8.  **Access the application:**
 
     * Open your browser and navigate to `http://localhost:3000`.
 
@@ -133,3 +154,5 @@ This project is a clone of the TrueCaller application, built using the MERN stac
 ## Contributing
 
 Contributions are welcome! Please feel free to submit pull requests or open issues.
+check out this project at [Link]https://true-caller-clone-7whw2tgmy-gagan-rajs-projects.vercel.app/
+
