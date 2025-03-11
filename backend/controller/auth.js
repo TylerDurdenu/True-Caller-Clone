@@ -54,7 +54,7 @@ async function handleLogout(req,res) {
         res.clearCookie("jwt", {
             httpOnly:false,
             secure:true,
-            sameSite:"lax",
+            sameSite:"none",
             path:"/"
         })
         return res.status(201).json("log out successfull")
