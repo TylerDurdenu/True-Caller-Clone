@@ -73,7 +73,7 @@ function NavBar() {
               <option value="logout">Logout</option>
             </select>
           </li>
-          <a href="">
+          <a href="https://play.google.com/store/apps/details?id=com.truecaller&rdid=com.truecaller&referrer=utm_source=web--header--index">
             <button className="dwnBtn">Download</button>
           </a>
         </ul>
