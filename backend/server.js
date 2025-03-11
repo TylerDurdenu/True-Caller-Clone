@@ -10,7 +10,7 @@ const cors = require('cors');
 const authRoutes = require("./routes/auth")
 
 app.use(cors({
-    origin: 'https://true-caller-clone-6s8cdj35z-gagan-rajs-projects.vercel.app',
+    origin: 'https://true-caller-clone-7whw2tgmy-gagan-rajs-projects.vercel.app',
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
 }));
