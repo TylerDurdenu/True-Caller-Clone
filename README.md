@@ -2,6 +2,8 @@
 
 This project is a clone of the TrueCaller application, built using the MERN stack (MongoDB, Express.js, Vite+React, Node.js). It allows users to search for phone numbers and retrieve associated information.
 
+🔗 **Original Work by**: [@OriginalAuthor](https://github.com/OriginalAuthor)  
+
 ## Features
 
 * **Phone Number Search:** Users can search for phone numbers to find associated names.
